@@ -12,13 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api/")
 public class ProfileController {
-	@GetMapping(value="/login")
+	@GetMapping(value="login")
 	public Response login(@RequestBody Login login) {
 		return Response.ok(null,"Login Successful!");
 	}
 	
-	@PostMapping(value="/registration")
+	@PostMapping(value="registration")
 	public Response registration(@RequestBody Registration registration) {
 		return Response.ok(null, "reg");
+	}
+	
+	@GetMapping(value = "test")
+	public String Test() {
+		return "Hello user";
 	}
 }
